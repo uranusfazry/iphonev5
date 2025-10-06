@@ -10,7 +10,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;500;700&display=swap" rel="stylesheet">
 
     <style>
-        /* --- Dark Mode Premium CSS --- */
+        /* --- Dark Mode Premium CSS (Kode Asli Anda) --- */
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
         
         :root {
@@ -471,7 +471,7 @@
             }
         }
 
-        /* --- Watermark Dark Mode --- */
+        /* --- Watermark Dark Mode (Kode Asli Anda) --- */
         @keyframes slideUpFadeIn {
             from { opacity: 0; transform: translateY(15px); }
             to { opacity: 1; transform: translateY(0); }
@@ -584,15 +584,127 @@
             white-space: nowrap;
             color: rgb(200, 220, 255);
         }
+        
+        /* --- [START] KODE BARU UNTUK IKLAN --- */
+        
+        /* Styling untuk Interstitial Ad (Layar Penuh) */
+        .ad-interstitial-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.85);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 10000;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.5s cubic-bezier(0.4, 0, 0.2, 1), visibility 0.5s;
+        }
+
+        .ad-interstitial-overlay.visible {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .ad-interstitial-container {
+            position: relative;
+            padding: 10px;
+            background-color: var(--surface-card);
+            border-radius: 16px;
+            border: 1px solid var(--glass-border);
+            box-shadow: 0 16px 64px rgba(0,0,0,0.7);
+            transform: scale(0.9);
+            transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .ad-interstitial-overlay.visible .ad-interstitial-container {
+            transform: scale(1);
+        }
+
+        .ad-interstitial-close-btn {
+            position: absolute;
+            top: -15px;
+            right: -15px;
+            width: 36px;
+            height: 36px;
+            background: white;
+            color: black;
+            border-radius: 50%;
+            border: 2px solid black;
+            font-size: 20px;
+            font-weight: bold;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+            transition: transform 0.3s ease, background-color 0.3s ease;
+        }
+        
+        .ad-interstitial-close-btn:hover {
+            transform: scale(1.1) rotate(90deg);
+            background-color: #eee;
+        }
+        
+        /* Styling untuk Banner Ads Container */
+        .ad-banner-container {
+            margin: 32px auto;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* --- [END] KODE BARU UNTUK IKLAN --- */
     </style>
 </head>
 <body>
+
+    <!-- [START] HTML IKLAN BARU: Full Screen Interstitial Ad -->
+    <div class="ad-interstitial-overlay" id="interstitialAd">
+        <div class="ad-interstitial-container">
+            <div class="ad-interstitial-close-btn" id="closeInterstitialAd">&times;</div>
+            <!-- Script Iklan 300x250 ditempatkan di sini -->
+            <script type="text/javascript">
+                atOptions = {
+                    'key' : '99ebdeb0a1e9502a99a53fc8d2abcbc1',
+                    'format' : 'iframe',
+                    'height' : 250,
+                    'width' : 300,
+                    'params' : {}
+                };
+            </script>
+            <script type="text/javascript" src="//librarysituation.com/99ebdeb0a1e9502a99a53fc8d2abcbc1/invoke.js"></script>
+        </div>
+    </div>
+    <!-- [END] HTML IKLAN BARU -->
+
     <div class="container">
         <header>
             <h1>iPhone Quoted Generator</h1>
             <p>Cukup ketik teks Anda, dan biarkan kami melakukan sisanya.</p>
         </header>
         
+        <!-- [START] HTML IKLAN BARU: Banner Ad (Contoh 320x50) -->
+        <div class="ad-banner-container" style="margin-top: -16px; margin-bottom: 32px;">
+            <!-- Script Iklan 320x50 -->
+            <script type="text/javascript">
+                atOptions = {
+                    'key' : 'de230e45bbc81078cd41ffe09bbc6346',
+                    'format' : 'iframe',
+                    'height' : 50,
+                    'width' : 320,
+                    'params' : {}
+                };
+            </script>
+            <script type="text/javascript" src="//librarysituation.com/de230e45bbc81078cd41ffe09bbc6346/invoke.js"></script>
+        </div>
+        <!-- [END] HTML IKLAN BARU -->
+
         <div class="input-section">
             <div class="input-group">
                 <label for="messageText">Pesan Anda</label>
@@ -603,7 +715,15 @@
                 <i class="fas fa-sparkles"></i> Generate Quote
             </button>
         </div>
-        
+
+        <!-- [START] HTML IKLAN BARU: Native Banner Ad -->
+        <div class="ad-banner-container">
+             <!-- Script Native Banner -->
+            <script async="async" data-cfasync="false" src="//librarysituation.com/dfcce1e4dcd467a319d802b0d83f7cf8/invoke.js"></script>
+            <div id="container-dfcce1e4dcd467a319d802b0d83f7cf8"></div>
+        </div>
+        <!-- [END] HTML IKLAN BARU -->
+
         <div class="result-section">
             <h3>Hasil Generator</h3>
             <div class="loading" id="loading">Memproses</div>
@@ -618,6 +738,22 @@
             </div>
         </div>
         
+        <!-- [START] HTML IKLAN BARU: Banner Ad (Contoh 728x90) -->
+        <div class="ad-banner-container">
+            <!-- Script Iklan 728x90 -->
+            <script type="text/javascript">
+                atOptions = {
+                    'key' : 'dc9689d668f3f6e1d89b83b03c47f624',
+                    'format' : 'iframe',
+                    'height' : 90,
+                    'width' : 728,
+                    'params' : {}
+                };
+            </script>
+            <script type="text/javascript" src="//librarysituation.com/dc9689d668f3f6e1d89b83b03c47f624/invoke.js"></script>
+        </div>
+        <!-- [END] HTML IKLAN BARU -->
+
         <footer></footer>
     </div>
 
@@ -632,7 +768,7 @@
 
     <audio id="clickSound" src="https://f.top4top.io/m_3565zqhf30.m4a" preload="auto"></audio>
 
-    <!-- JavaScript for Watermark -->
+    <!-- JavaScript for Watermark (Kode Asli Anda) -->
     <script>
       (function() {
         function initializeWatermark() {
@@ -762,7 +898,7 @@
       })();
     </script>
     
-    <!-- JavaScript for Quote Generator -->
+    <!-- JavaScript for Quote Generator (Kode Asli Anda) -->
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             const loading = document.getElementById('loading');
@@ -868,5 +1004,41 @@
             }
         });
     </script>
+
+    <!-- [START] SCRIPT BARU UNTUK LOGIC IKLAN -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const interstitialAd = document.getElementById('interstitialAd');
+            const closeInterstitialAd = document.getElementById('closeInterstitialAd');
+
+            // --- Logic untuk Interstitial Ad ---
+            // Cek sessionStorage untuk memastikan iklan hanya muncul sekali per sesi
+            if (!sessionStorage.getItem('interstitialAdShown')) {
+                // Tampilkan iklan setelah jeda singkat
+                setTimeout(() => {
+                    interstitialAd.classList.add('visible');
+                    // Tandai bahwa iklan sudah ditampilkan di sesi ini
+                    sessionStorage.setItem('interstitialAdShown', 'true');
+                }, 1000); // Tampil setelah 1 detik
+            }
+
+            // Tambahkan event listener untuk tombol close
+            closeInterstitialAd.addEventListener('click', () => {
+                interstitialAd.classList.remove('visible');
+            });
+        });
+    </script>
+    <!-- [END] SCRIPT BARU UNTUK LOGIC IKLAN -->
+
+    <!-- [START] SCRIPT IKLAN LAINNYA DARI NETWORK -->
+    
+    <!-- Popunder Script -->
+    <script type='text/javascript' src='//librarysituation.com/82/b5/ca/82b5cac782fdde0ae65e85e5b6d25594.js'></script>
+    
+    <!-- SocialBar Script -->
+    <script type='text/javascript' src='//librarysituation.com/49/07/ba/4907ba6c680d9e45efae851742a48cc6.js'></script>
+    
+    <!-- [END] SCRIPT IKLAN LAINNYA DARI NETWORK -->
+
 </body>
 </html>
