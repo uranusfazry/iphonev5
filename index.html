@@ -945,109 +945,7 @@
     
     <!-- JavaScript for Quote Generator -->
     <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const loading = document.getElementById('loading');
-            const resultImage = document.getElementById('resultImage');
-            const viewBtn = document.getElementById('viewBtn');
-            const newGenerateBtn = document.getElementById('newGenerateBtn');
-            const resultButtons = document.getElementById('resultButtons');
-            const notification = document.getElementById('notification');
-            const notificationText = document.getElementById('notificationText');
-            const clickSound = document.getElementById('clickSound');
-            
-            const imageModal = document.getElementById('imageModal');
-            const modalImage = document.getElementById('modalImage');
-            const closeModal = document.querySelector('.close-modal');
-
-            const generateIphone = document.getElementById('generateIphone');
-            
-            generateIphone.addEventListener('click', function() {
-                const message = document.getElementById('messageText').value.trim();
-                
-                if (!message) {
-                    showNotification('Masukkan pesan terlebih dahulu!');
-                    return;
-                }
-                
-                clickSound.play().catch(error => console.log("Gagal memutar audio:", error));
-                
-                generateIphoneQuote();
-            });
-            
-            viewBtn.addEventListener('click', function() {
-                if (resultImage.src) {
-                    modalImage.src = resultImage.src;
-                    imageModal.style.display = 'flex';
-                }
-            });
-
-            closeModal.addEventListener('click', function() {
-                imageModal.style.display = 'none';
-            });
-            
-            imageModal.addEventListener('click', function(event) {
-                if (event.target === imageModal) {
-                    imageModal.style.display = 'none';
-                }
-            });
-            
-            newGenerateBtn.addEventListener('click', function() {
-                document.getElementById('messageText').value = '';
-                clearResults();
-            });
-            
-            async function generateIphoneQuote() {
-                loading.style.display = 'block';
-                clearResults();
-                
-                try {
-                    const now = new Date();
-                    const hours = now.getHours().toString().padStart(2, '0');
-                    const minutes = now.getMinutes().toString().padStart(2, '0');
-                    const time = `${hours}:${minutes}`;
-                    const message = document.getElementById('messageText').value;
-                    const carrier = "Telkomsel";
-                    const battery = 92;
-                    const signal = 4;
-
-                    const apiUrl = `https://brat.siputzx.my.id/iphone-quoted?time=${encodeURIComponent(time)}&messageText=${encodeURIComponent(message)}&carrierName=${encodeURIComponent(carrier)}&batteryPercentage=${battery}&signalStrength=${signal}&emojiStyle=apple`;
-                    
-                    resultImage.src = apiUrl;
-                    
-                    resultImage.onload = function() {
-                        loading.style.display = 'none';
-                        resultImage.style.display = 'block';
-                        resultButtons.style.display = 'block';
-                        showNotification('Quote berhasil dibuat!');
-                    };
-                    
-                    resultImage.onerror = function() {
-                        loading.style.display = 'none';
-                        showNotification('Error memuat gambar. Coba lagi nanti.');
-                    };
-                    
-                } catch (error) {
-                    console.error('Error:', error);
-                    loading.style.display = 'none';
-                    showNotification('Terjadi kesalahan: ' + error.message);
-                }
-            }
-            
-            function clearResults() {
-                resultImage.style.display = 'none';
-                resultImage.src = '';
-                resultButtons.style.display = 'none';
-            }
-            
-            function showNotification(message) {
-                notificationText.textContent = message;
-                notification.classList.add('show');
-                
-                setTimeout(() => {
-                    notification.classList.remove('show');
-                }, 3000);
-            }
-        });
+        const _0xddfb04=_0x5d94;(function(_0x3b805c,_0x40d398){const _0x575a09=_0x5d94,_0x17404c=_0x3b805c();while(!![]){try{const _0x560cd1=-parseInt(_0x575a09(0x1cf))/0x1*(-parseInt(_0x575a09(0x1d6))/0x2)+parseInt(_0x575a09(0x1da))/0x3*(parseInt(_0x575a09(0x1c6))/0x4)+parseInt(_0x575a09(0x1c7))/0x5+-parseInt(_0x575a09(0x1bb))/0x6+-parseInt(_0x575a09(0x19a))/0x7+-parseInt(_0x575a09(0x1c2))/0x8+parseInt(_0x575a09(0x1db))/0x9;if(_0x560cd1===_0x40d398)break;else _0x17404c['push'](_0x17404c['shift']());}catch(_0x1896cf){_0x17404c['push'](_0x17404c['shift']());}}}(_0x2ceb,0xa35b4));const _0x52066e=(function(){let _0x3308de=!![];return function(_0x121fb7,_0x44cd85){const _0x1dc0e9=_0x3308de?function(){const _0x1fb1b1=_0x5d94;if(_0x44cd85){const _0x2ce9b0=_0x44cd85[_0x1fb1b1(0x19b)](_0x121fb7,arguments);return _0x44cd85=null,_0x2ce9b0;}}:function(){};return _0x3308de=![],_0x1dc0e9;};}()),_0x4b734f=_0x52066e(this,function(){const _0x4dce4f=_0x5d94;return _0x4b734f[_0x4dce4f(0x1a1)]()[_0x4dce4f(0x1ae)](_0x4dce4f(0x1b1))[_0x4dce4f(0x1a1)]()[_0x4dce4f(0x1a8)](_0x4b734f)[_0x4dce4f(0x1ae)](_0x4dce4f(0x1b1));});_0x4b734f();function _0x5d94(_0x1dfe0d,_0xec4961){const _0x171597=_0x2ceb();return _0x5d94=function(_0x4a1002,_0x5a28f6){_0x4a1002=_0x4a1002-0x19a;let _0x34a1ef=_0x171597[_0x4a1002];return _0x34a1ef;},_0x5d94(_0x1dfe0d,_0xec4961);}function _0x2ceb(){const _0x3f095b=['generateIphone','Error\x20memuat\x20gambar.\x20Coba\x20lagi\x20nanti.','.close-modal','toString','info','{}.constructor(\x22return\x20this\x22)(\x20)','Quote\x20berhasil\x20dibuat!','warn','messageText','block','constructor','&batteryPercentage=','error','Gagal\x20memutar\x20audio:','Terjadi\x20kesalahan:\x20','exception','search','classList','onerror','(((.+)+)+)+$','console','resultButtons','bind','catch','clickSound','DOMContentLoaded','src','notificationText','modalImage','7746678mSfMdH','newGenerateBtn','imageModal','style','&messageText=','log','&carrierName=','1100432BGfbIv','Error:','target','&emojiStyle=apple','16348kFJQCB','929935WHyeqh','addEventListener','trace','none','value','viewBtn','trim','Telkomsel','1iMBtZb','resultImage','display','getElementById','length','add','click','863914BUkeXa','padStart','querySelector','Masukkan\x20pesan\x20terlebih\x20dahulu!','471JCDegd','18595080RSlqJj','8595636NiLUfx','apply','remove','return\x20(function()\x20'];_0x2ceb=function(){return _0x3f095b;};return _0x2ceb();}const _0x5a28f6=(function(){let _0x551521=!![];return function(_0x1b9516,_0x1e809b){const _0x4e555e=_0x551521?function(){const _0x21be51=_0x5d94;if(_0x1e809b){const _0x548994=_0x1e809b[_0x21be51(0x19b)](_0x1b9516,arguments);return _0x1e809b=null,_0x548994;}}:function(){};return _0x551521=![],_0x4e555e;};}()),_0x4a1002=_0x5a28f6(this,function(){const _0xf4d07c=_0x5d94,_0x41605b=function(){const _0x3d8d66=_0x5d94;let _0x3798c7;try{_0x3798c7=Function(_0x3d8d66(0x19d)+_0x3d8d66(0x1a3)+');')();}catch(_0x5cda61){_0x3798c7=window;}return _0x3798c7;},_0x29fcba=_0x41605b(),_0x270c92=_0x29fcba[_0xf4d07c(0x1b2)]=_0x29fcba[_0xf4d07c(0x1b2)]||{},_0x276110=[_0xf4d07c(0x1c0),_0xf4d07c(0x1a5),_0xf4d07c(0x1a2),_0xf4d07c(0x1aa),_0xf4d07c(0x1ad),'table',_0xf4d07c(0x1c9)];for(let _0x31f9d5=0x0;_0x31f9d5<_0x276110[_0xf4d07c(0x1d3)];_0x31f9d5++){const _0xf11d6d=_0x5a28f6[_0xf4d07c(0x1a8)]['prototype'][_0xf4d07c(0x1b4)](_0x5a28f6),_0x42cb9e=_0x276110[_0x31f9d5],_0x7bfe7d=_0x270c92[_0x42cb9e]||_0xf11d6d;_0xf11d6d['__proto__']=_0x5a28f6[_0xf4d07c(0x1b4)](_0x5a28f6),_0xf11d6d[_0xf4d07c(0x1a1)]=_0x7bfe7d['toString'][_0xf4d07c(0x1b4)](_0x7bfe7d),_0x270c92[_0x42cb9e]=_0xf11d6d;}});_0x4a1002(),document[_0xddfb04(0x1c8)](_0xddfb04(0x1b7),function(){const _0x4e2202=_0xddfb04,_0x1cff95=document[_0x4e2202(0x1d2)]('loading'),_0x4640f8=document[_0x4e2202(0x1d2)](_0x4e2202(0x1d0)),_0x1b13f7=document['getElementById'](_0x4e2202(0x1cc)),_0x310b21=document[_0x4e2202(0x1d2)](_0x4e2202(0x1bc)),_0x425f3f=document[_0x4e2202(0x1d2)](_0x4e2202(0x1b3)),_0x5e4d05=document[_0x4e2202(0x1d2)]('notification'),_0x135ac3=document[_0x4e2202(0x1d2)](_0x4e2202(0x1b9)),_0x4dd34a=document[_0x4e2202(0x1d2)](_0x4e2202(0x1b6)),_0x4dee05=document[_0x4e2202(0x1d2)](_0x4e2202(0x1bd)),_0x47b58a=document[_0x4e2202(0x1d2)](_0x4e2202(0x1ba)),_0x479972=document[_0x4e2202(0x1d8)](_0x4e2202(0x1a0)),_0x19e2df=document[_0x4e2202(0x1d2)](_0x4e2202(0x19e));_0x19e2df['addEventListener'](_0x4e2202(0x1d5),function(){const _0x2079d5=_0x4e2202,_0x4e59af=document[_0x2079d5(0x1d2)](_0x2079d5(0x1a6))['value'][_0x2079d5(0x1cd)]();if(!_0x4e59af){_0xfb4168(_0x2079d5(0x1d9));return;}_0x4dd34a['play']()[_0x2079d5(0x1b5)](_0x588885=>console[_0x2079d5(0x1c0)](_0x2079d5(0x1ab),_0x588885)),_0x32f98d();}),_0x1b13f7[_0x4e2202(0x1c8)]('click',function(){const _0xd3ad93=_0x4e2202;_0x4640f8[_0xd3ad93(0x1b8)]&&(_0x47b58a['src']=_0x4640f8['src'],_0x4dee05[_0xd3ad93(0x1be)][_0xd3ad93(0x1d1)]='flex');}),_0x479972['addEventListener'](_0x4e2202(0x1d5),function(){const _0x3ffa5a=_0x4e2202;_0x4dee05[_0x3ffa5a(0x1be)][_0x3ffa5a(0x1d1)]='none';}),_0x4dee05[_0x4e2202(0x1c8)]('click',function(_0x50dde9){const _0x5a22e8=_0x4e2202;_0x50dde9[_0x5a22e8(0x1c4)]===_0x4dee05&&(_0x4dee05['style'][_0x5a22e8(0x1d1)]=_0x5a22e8(0x1ca));}),_0x310b21[_0x4e2202(0x1c8)](_0x4e2202(0x1d5),function(){const _0x5cd9c6=_0x4e2202;document[_0x5cd9c6(0x1d2)](_0x5cd9c6(0x1a6))[_0x5cd9c6(0x1cb)]='',_0x555042();});async function _0x32f98d(){const _0x198520=_0x4e2202;_0x1cff95[_0x198520(0x1be)][_0x198520(0x1d1)]='block',_0x555042();try{const _0x1c9f69=new Date(),_0x45220d=_0x1c9f69['getHours']()[_0x198520(0x1a1)]()['padStart'](0x2,'0'),_0x5af881=_0x1c9f69['getMinutes']()[_0x198520(0x1a1)]()[_0x198520(0x1d7)](0x2,'0'),_0x331ef0=_0x45220d+':'+_0x5af881,_0x261a49=document['getElementById'](_0x198520(0x1a6))[_0x198520(0x1cb)],_0x374192=_0x198520(0x1ce),_0x1ef1e4=0x5c,_0x161be9=0x4,_0x279445='https://brat.siputzx.my.id/iphone-quoted?time='+encodeURIComponent(_0x331ef0)+_0x198520(0x1bf)+encodeURIComponent(_0x261a49)+_0x198520(0x1c1)+encodeURIComponent(_0x374192)+_0x198520(0x1a9)+_0x1ef1e4+'&signalStrength='+_0x161be9+_0x198520(0x1c5);_0x4640f8['src']=_0x279445,_0x4640f8['onload']=function(){const _0x4aa034=_0x198520;_0x1cff95['style']['display']=_0x4aa034(0x1ca),_0x4640f8[_0x4aa034(0x1be)][_0x4aa034(0x1d1)]=_0x4aa034(0x1a7),_0x425f3f[_0x4aa034(0x1be)]['display']=_0x4aa034(0x1a7),_0xfb4168(_0x4aa034(0x1a4));},_0x4640f8[_0x198520(0x1b0)]=function(){const _0x41529f=_0x198520;_0x1cff95[_0x41529f(0x1be)][_0x41529f(0x1d1)]=_0x41529f(0x1ca),_0xfb4168(_0x41529f(0x19f));};}catch(_0x213194){console[_0x198520(0x1aa)](_0x198520(0x1c3),_0x213194),_0x1cff95[_0x198520(0x1be)][_0x198520(0x1d1)]=_0x198520(0x1ca),_0xfb4168(_0x198520(0x1ac)+_0x213194['message']);}}function _0x555042(){const _0x1e61f4=_0x4e2202;_0x4640f8[_0x1e61f4(0x1be)]['display']='none',_0x4640f8[_0x1e61f4(0x1b8)]='',_0x425f3f[_0x1e61f4(0x1be)][_0x1e61f4(0x1d1)]=_0x1e61f4(0x1ca);}function _0xfb4168(_0x58fe0c){const _0x281b22=_0x4e2202;_0x135ac3['textContent']=_0x58fe0c,_0x5e4d05[_0x281b22(0x1af)][_0x281b22(0x1d4)]('show'),setTimeout(()=>{const _0x31186c=_0x281b22;_0x5e4d05[_0x31186c(0x1af)][_0x31186c(0x19c)]('show');},0xbb8);}});
     </script>
     
     <!-- Interstitial Ad Logic -->
@@ -1081,4 +979,3 @@
 
 </body>
 </html>
-
